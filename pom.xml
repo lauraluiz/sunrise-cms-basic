@@ -9,12 +9,30 @@
   <name>sunrise-cms-basic</name>
   <url>http://maven.apache.org</url>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
+    <dependency>
+      <groupId>com.commercetools.sunrise.cms</groupId>
+      <artifactId>cms-api</artifactId>
+      <version>0.2.0</version>
+    </dependency>
 
     <dependency>
       <groupId>com.commercetools.sunrise.cms</groupId>
-      <artifactId>commercetools-sunrise-cms</artifactId>
-      <version>2.0.0</version>
+      <artifactId>cms-contentful</artifactId>
+      <version>0.2.0</version>
     </dependency>
 
     <dependency>
@@ -23,6 +41,5 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
 </project>
