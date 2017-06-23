@@ -13,10 +13,6 @@ import java.util.concurrent.ForkJoinPool;
 
 import static com.commercetools.sunrise.PropertiesUtils.loadProperties;
 
-/**
- * Hello world!
- *
- */
 public class App {
 
     private static final List<Locale> LOCALES = Collections.singletonList(Locale.US);
@@ -39,10 +35,12 @@ public class App {
 
     private static void printProduct(final CmsService cmsService, final String pageKey) throws ExecutionException, InterruptedException {
         final CmsPage cmsPage = fetchCmsPage(cmsService, pageKey);
-        System.out.println("** PRODUCT " + cmsPage.fieldOrEmpty("productName"));
+        System.out.println("*** PRODUCT " + cmsPage.fieldOrEmpty("productName"));
         System.out.println("Price: " + cmsPage.fieldOrEmpty("price"));
         System.out.println("Category: " + cmsPage.fieldOrEmpty("categories[0].title"));
         System.out.println("Brand logo: " + cmsPage.fieldOrEmpty("brand.logo"));
+        System.out.println("Brand founded: " + cmsPage.fieldOrEmpty("brand.foundedYear"));
+        System.out.println("Brand location: " + cmsPage.fieldOrEmpty("brand.location"));
     }
 
     private static CmsPage fetchCmsPage(final CmsService cmsService, final String pageKey) throws InterruptedException, ExecutionException {
